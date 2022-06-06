@@ -19,24 +19,49 @@ public final class XogoLetras extends XogoAzar {
     public static final String VOGAIS="AEIOU";
     public static final int NUM_LETRAS=9;
     
-    private Character[] letras;
+    private char[] letras;
     private List<String> palabras;
 
     public XogoLetras() {
         super(NOME_XOGO);
         
-        letras = new Character[NUM_LETRAS];
+        letras = new char[NUM_LETRAS];
         palabras = new ArrayList<>();
         
     }
 
-    public static int getVocal() {
-        return Random.nextInt(5);
-    }
-    
+   
     @Override
     public boolean comprobar(Object obj) {
         return true;
+    }
+    
+    public static char getVocal() {
+        return VOGAIS.charAt(XERADOR.nextInt(VOGAIS.length()));
+    }
+    
+    public static char getConsoante() {
+        return CONSOANTES.charAt(XERADOR.nextInt(CONSOANTES.length()));
+    }
+
+    public char[] getLetras() {
+        return letras;
+    }
+
+    public void setLetras(char[] letras) {
+        this.letras = letras;
+    }
+
+    public List<String> getPalabras() {
+        return palabras;
+    }
+
+    public boolean setPalabras(List<String> palabras) {
+        if (palabras != null && !palabras.isEmpty()) {
+            this.palabras = palabras;
+            return true;
+        }
+        return false;
     }
     
     

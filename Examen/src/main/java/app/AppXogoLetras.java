@@ -4,7 +4,10 @@
  */
 package app;
 
+import java.util.ArrayList;
+import java.util.List;
 import modelo.XogoAzar;
+import modelo.XogoLetras;
 
 /**
  *
@@ -17,6 +20,20 @@ public class AppXogoLetras {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        
+        XogoLetras xogo = new XogoLetras();
+        
+        List<String> palabras = new ArrayList<>();
+        
+        if (!xogo.setPalabras(palabras)) {
+            System.out.println("Está vacía o es nula");
+        }
+        
+        /*for (int i = 0; i < 10; i++) {
+            char c = xogo.getConsoante();
+            System.out.println(c);*/
+            
+        }
     }
     
 }
