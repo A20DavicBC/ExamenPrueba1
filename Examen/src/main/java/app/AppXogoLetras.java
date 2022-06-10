@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 import modelo.XogoAzar;
 import modelo.XogoLetras;
+import vista.VentanaLetras;
 
 /**
  *
@@ -23,17 +24,19 @@ public class AppXogoLetras {
         
         XogoLetras xogo = new XogoLetras();
         
-        List<String> palabras = new ArrayList<>();
+        VentanaLetras v = new VentanaLetras();
         
-        if (!xogo.setPalabras(palabras)) {
-            System.out.println("Está vacía o es nula");
-        }
+//        List<String> palabras = new ArrayList<>();
         
-        /*for (int i = 0; i < 10; i++) {
-            char c = xogo.getConsoante();
-            System.out.println(c);*/
+//        if (!xogo.setPalabras(palabras)) {
+//            System.out.println("Está vacía o es nula");
+//        }
+        
+//        for (int i = 0; i < 10; i++) {
+//            char c = xogo.getConsoante();
+//            System.out.println(c);
+//        }
             
-        }
     }
-    
 }
+    

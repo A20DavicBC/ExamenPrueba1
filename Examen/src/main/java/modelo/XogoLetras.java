@@ -4,6 +4,7 @@
  */
 package modelo;
 
+import java.lang.reflect.Method;
 import java.util.Random;
 import java.util.ArrayList;
 import java.util.List;
@@ -33,8 +34,35 @@ public final class XogoLetras extends XogoAzar {
    
     @Override
     public boolean comprobar(Object obj) {
+        String palabra = obj.toString();
+        
+        if (palabras == null || !palabras.contains(palabra)) 
+            return false;
+        
+        
+        for (int i = 0; i < palabra.length(); i++) {
+            char c = palabra.charAt(i);
+            
+        }
+        
         return true;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < letras.length; i++) {
+            char letra = letras[i];
+            
+        }
+        
+        for (char letra : letras) {
+            sb.append(letra).append(" ");
+        }
+        return sb.toString();
+    }
+    
+    
     
     public static char getVocal() {
         return VOGAIS.charAt(XERADOR.nextInt(VOGAIS.length()));
@@ -64,5 +92,40 @@ public final class XogoLetras extends XogoAzar {
         return false;
     }
     
+    public int getSize(){
+        if (letras != null) {
+            return letras.length;
+        }
+        return 0;
+    }
     
+    public boolean addLetra(char letra){
+        for (int i = 0; i < letras.length; i++) {
+            if (letras[i]==0){
+                letras[i] = letra;
+                return true;
+            }
+            
+        }
+        return false;
+    }
+    
+    public void removeLetras(){
+        for (int i = 0; i < letras.length; i++) {
+            char letra = letras[i];
+            
+        }
+    }
+    
+    public void setLetras() {
+        for (int i = 0; i < letras.length; i++) {
+            int v = XERADOR.nextInt(2);
+            if (v==0) {
+                letras[i] = getVocal();
+            }
+            else {
+                letras[i] = getConsoante();
+            }
+        }
+    }
 }
